@@ -1,0 +1,50 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282c34;
+}
+
+.App * {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.App .title {
+  margin-bottom: 5px;
+  font-size: 25px;
+  color: white;
+}
+
+.todoListContainer {
+  border-radius: 10px;
+  width: 310px;
+  background-color: coral;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.inputContainer input {
+  border-bottom: 3px solid rgb(43, 143, 209);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.itemsContainer {
+  position: relative;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.itemsContainer::-webkit-scrollbar {
+  display: none;
+}

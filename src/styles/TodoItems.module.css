@@ -1,0 +1,44 @@
+.item {
+    width: 100%;
+    position: relative;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    color: white;
+    animation: 'Fade' 3s ease;
+}
+
+@keyframes Fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.item.complited {
+    text-decoration: line-through;
+}
+
+.item input {
+    margin-right:5px;
+}
+
+.item input:hover {
+    cursor: pointer;
+}
+
+.button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(205, 50, 50);
+    border-radius: 5px;
+    float: right;
+}
+
+.button:hover {
+    cursor: pointer;
+}
