@@ -1,30 +1,41 @@
-export default function (state, action){
+const TotoListReducer = (state, action) => {
     switch(action.type){
         case 'add':
-            //setTodoLabel('')
-            //setTodos([
-            return [
-                ...state,
-                {
-                    index:Date.now(),
-                    label:action.payload,
-                    isComplited:false,
-                }
-            ]
+            if(action.payload.length > 0)
+                return [
+                    ...state,
+                    {
+                        index:Date.now(),
+                        label:action.payload,
+                        isComplited:false,
+                    }
+                ]
+            else 
+                return state
         case 'toggle':
             return state.map(el => {
-                console.log(action.payload, el.index)
-                //if(action.payload !== el.index)
+                if(action.payload === el.index){
                   el.isComplited = !el.isComplited
+                }
                 return el
             })
 
         case 'remove':
-            return state.filter(el => {
-                return action.payload !== el.index
-            })
-
+            return state.filter(el => action.payload !== el.index)
         default:
             return state
     }
 }
+
+const TotoListInputReducer = (state, action) => {
+    switch(action.type){
+        case 'add':
+            return [
+                action.payload 
+            ]
+        default:
+            return state
+    }
+}
+
+export { TotoListReducer, TotoListInputReducer }
